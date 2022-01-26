@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection');
 
-class User extends Model { }
+class Article extends Model { }
 
-User.init(
+Article.init(
     {
 
     },
@@ -13,8 +12,8 @@ User.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user'
+        modelName: 'article'
     }
 );
 
-module.exports = User;
+module.exports = Article;
