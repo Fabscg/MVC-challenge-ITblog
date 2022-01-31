@@ -1,30 +1,35 @@
-const { User, Post } = require('../models');
+const { User } = require('../models');
 
 
 const userdata = [
     {
-        username: 'alesmonde0',
+        username: 'alessandro',
         email: 'nwestnedge0@cbc.ca',
-        password: 'password123'
+        github: 'alesmonde',
+        password: 'password123',
     },
     {
-        username: 'jwilloughway1',
+        username: 'julliane',
         email: 'rmebes1@sogou.com',
+        github: 'jwill',
         password: 'password123'
     },
     {
-        username: 'iboddam2',
+        username: 'fabs',
         email: 'cstoneman2@last.fm',
+        github: 'Fabskickass',
         password: 'password123'
     },
     {
-        username: 'dstanmer3',
+        username: 'daniel',
         email: 'ihellier3@goo.ne.jp',
+        github: 'daniel',
         password: 'password123'
     },
     {
-        username: 'djiri4',
+        username: 'kacper',
         email: 'gmidgley4@weather.com',
+        github: 'gasparin',
         password: 'password123'
     },
 ]
