@@ -64,6 +64,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/dashboard/create/">Create post</a>
             </li>
+             {{else}}
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -74,6 +75,7 @@
                 aria-current="true"
                 aria-expanded="false"
               >
+              
                 Settings
               </a>
               <ul
@@ -81,7 +83,7 @@
                 aria-labelledby="navbarDropdownMenuLink"
               >
                   <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                {{else}}
+               
                
                   <li><a class="dropdown-item" href="/login">Login</a></li>
                 {{/if}}
