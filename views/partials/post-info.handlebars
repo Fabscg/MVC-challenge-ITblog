@@ -1,23 +1,21 @@
-<div class="card mb-6">
-    <header class="card-header card-header-title bg-light">
-        <div class="column">
-            <p class="">
-                <a href="/post/{{id}}" class="text-black in-capitalized">{{title}}</a>
-            </p>
-        </div>
+<article class="post">
+  <a href="/post/{{id}}">
+    <div class="title">
+      {{title}}
+    </div>
+    <div class="meta">
+      <div class="text">
+        {{content}}
+      </div>
+      <br />
+      by
+      <p>{{user.username}}</p>
+      on
+      {{format_date created_at}}
+      |
+      {{comments_length}}
+      {{format_plural "comment" comments.length}}
+    </div>
+  </a>
 
-        <div class="column">
-            <span class=""></span>
-        </div>
-    </header>
-    <div class="card-content">
-        <divclass="content">
-            {{post_content}}
-    </div>
-    <div>
-        <b>{{user.name}}</b> |
-        <a href="https://github.com/{{user.github}}"><i class="fab fa-github"></i></a>
-        |{{format_date created_at}} | <a href="/post/{{id}}">{{comment.length}}
-            {{format_plural "comment" comments.length}}</a>
-    </div>
-</div>
+</article>

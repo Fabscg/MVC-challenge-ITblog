@@ -1,12 +1,14 @@
-<div>
-{{#each posts as |post|}}
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{else}}
+  <p class="pb-4">There are not currently posts</p>
+  {{/each}}
+</ol>
 
-    {{>post-info post}}
-</div>
 
-{{else}}
-<p class="pb-4">There are not currently posts</p>
-{{/each}}
 
 
 

@@ -1,3 +1,68 @@
-body{
-  font-family: 'Syne Mono', monospace;
+body {
+  font-family: "Syne Mono", monospace;
+  background-color: black;
+}
+
+.navbar {
+  font-family: "Syne Mono", monospace;
+  font-weight: bold;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: end;
+}
+.navbar-expand-lg .navbar-collapse .navbar-brand {
+  padding: 5px 0 5px 20px;
+}
+.navbar-brand {
+  padding-left: 80px;
+  font-size: 60px;
+}
+
+li {
+  padding-right: 20px;
+}
+
+form {
+  margin: 30px auto;
+  gap: 20px;
+  padding: 10px 0 10px;
+}
+
+.form-login {
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.login-form {
+  border-radius: 15px 50px 0 0;
+}
+
+.signup-form {
+  border-radius: 0 0 15px 50px;
+}
+
+label,
+input {
+  padding: 5px 10px 5px 10px;
+}
+
+.copyright {
+  color: gray;
+}
+
+.icon-terminal {
+  color: rgb(172, 238, 72);
+}
+@media screen and (max-width: 575px) {
+  .navbar-brand {
+    font-size: 40px;
+  }
 }

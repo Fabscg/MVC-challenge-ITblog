@@ -54,14 +54,12 @@ router.post('/', withAuth, (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        twitter: req.body.twitter,
         github: req.body.github
     })
         .then(userData => {
             req.session.save(() => {
                 req.session.user_id = userData.id;
                 req.session.username = userData.username;
-                req.session.twitter = userData.twitter;
                 req.session.github = userData.github;
                 req.session.loggedIn = true;
 
@@ -74,7 +72,7 @@ router.post('/', withAuth, (req, res) => {
 router.post('/login', withAuth, (req, res) => {
     User.findOne({
         where: {
-            email: req.boday.email
+            email: req.body.email
         }
     })
         .then(userData => {
@@ -90,7 +88,6 @@ router.post('/login', withAuth, (req, res) => {
             req.session.save(() => {
                 req.session.user_id = userdata.id,
                     req.session.username = userData.username,
-                    req.session.twitter = userData.twitter,
                     req.session.github = userData.github,
                     req.session.loggedIn = true
 

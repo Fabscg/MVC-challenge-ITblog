@@ -19,7 +19,10 @@ Post.init(
         },
         post_content: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
         },
         user_id: {
             type: DataTypes.INTEGER,
