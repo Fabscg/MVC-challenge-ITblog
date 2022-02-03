@@ -1,10 +1,9 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { User, Comment, Post } = require('../models')
 
 
 router.get('/', (req, res) => {
-    console.log('======================');
+   
     Post.findAll({
         attributes: [
             'id',
@@ -15,15 +14,10 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username', 'github']
-                }
             },
             {
-                model: User,
-                attributes: ['username', 'github']
+                model:User,
+                attributes:['username']
             }
         ]
     })
@@ -39,6 +33,15 @@ router.get('/', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('login');
 });
 
 // get single post
@@ -59,12 +62,12 @@ router.get('/post/:id', (req, res) => {
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
-                    attributes: ['username', 'github']
+                    attributes: ['username']
                 }
             },
             {
                 model: User,
-                attributes: ['username', 'github']
+                attributes: ['username']
             }
         ]
     })
@@ -87,22 +90,6 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-
-    res.render('login');
-});
-
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/')
-        return;
-    }
-    res.render('signup')
-})
 
 
 module.exports = router;
