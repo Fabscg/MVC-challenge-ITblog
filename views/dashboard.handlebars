@@ -9,10 +9,10 @@
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+      <label for="post-content">Content</label>
+      <input id="post-content" name="post-content" />
     </div>
-    <button type="submit" class="btn">Create</button>
+    <button type="submit" class="btn btn-outline-dark mt-3">Create</button>
   </form>
 </section>
 
@@ -20,12 +20,10 @@
 <section>
   <h2>Your Posts</h2>
    {{#each posts as |post|}}
-  <ol>
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-  </ol>
+  <div>
+    {{>post--info post}}
+    <a href="/dashboard/edith/{{post.id}}"><button class="btn btn-outline-dark">Edit</button></a>
+  </div>
    {{/each}}
 </section>
 {{/if}}

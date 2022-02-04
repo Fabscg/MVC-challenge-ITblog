@@ -27,7 +27,7 @@ router.get("/:id", (req, res) => {
       },
       {
         model: Comment,
-        attributes: ["id", "post_content", "created_at"],
+        attributes: ["id", "comment_text", "created_at"],
         include: {
           model: Post,
           attributes: ["title"],
@@ -75,13 +75,14 @@ router.post("/login", (req, res) => {
     },
   }).then((userData) => {
     if (!userData) {
-      res.status(400).json({ message: "No user with that email address!" });
+      res.status(400).json({ message: "No user with that name!" });
       return;
     }
 
     const validPassword = userData.checkPassword(req.body.password);
     if (!validPassword) {
       res.status(404).json({ message: "Incorrect Password" });
+      return;
     }
     req.session.save(() => {
       req.session.user_id = userData.id;

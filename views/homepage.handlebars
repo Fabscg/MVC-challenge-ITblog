@@ -1,13 +1,10 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{else}}
-  <p class="pb-4 text-center text-secondary">There are not currently posts</p>
-  {{/each}}
-</ol>
 
+
+{{#each posts as |post|}}
+<div>
+  {{>post-info post }}
+</div>
+{{/each}}
 
 
 
