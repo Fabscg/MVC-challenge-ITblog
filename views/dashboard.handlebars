@@ -18,10 +18,10 @@
 
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2  class="bg-light">Your Posts</h2>
    {{#each posts as |post|}}
-  <div>
-    {{>post--info post}}
+  <div class="bg-light">
+    {{>post-info post}}
     <a href="/dashboard/edith/{{post.id}}"><button class="btn btn-outline-dark">Edit</button></a>
   </div>
    {{/each}}

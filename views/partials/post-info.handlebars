@@ -5,7 +5,7 @@
     </div>
     <div class="meta">
       <div class="text">
-        {{content}}
+        {{post_content}}
       </div>
       <br />
       by
@@ -13,8 +13,8 @@
       on
       {{format_date created_at}}
       |
-      {{comments_length}}
-      {{format_plural "comment" comments.length}}
+      <a href="/post/{{id}}">{{comments.length}}
+        {{format_plural "comment" comments.length}}</a>
     </div>
   </a>
 

@@ -25,6 +25,7 @@ Post.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      onDelete: "CASCADE",
       references: {
         model: "user",
         key: "id",
