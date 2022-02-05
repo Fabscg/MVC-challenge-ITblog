@@ -72,3 +72,21 @@ input {
     font-size: 40px;
   }
 }
+
+.post {
+  width: 70%;
+  color: black;
+  text-align: center;
+  padding: 20px 0 10px;
+  margin: 0 auto 30px;
+  background-color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.your-post {
+  width: 70%;
+  margin: 50px auto 0;
+  padding: 10px 0 10px;
+  border-radius: 50px 15px 0 0;
+}

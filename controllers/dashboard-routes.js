@@ -7,24 +7,13 @@ const withAuth = require("../utils/auth");
 router.get("/edit/:id", withAuth, (req, res) => {
   Post.findOne({
     where: { id: req.params.id },
-    attributes: ["id", "post_content", "title", "create_at"],
-    include: [
-      {
-        model: SVGTextContentElement,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-        inlcude: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
   }).then((postData) => {
     const post = postData.get({ plain: true });
-    res.render("edit-post", { post, loggedIn: req.session.loggedIn });
+    res.render("edit-post", {
+      layout: "dashboard",
+      post,
+      loggedIn: req.session.loggedIn,
+    });
   });
 });
 
@@ -33,21 +22,16 @@ router.get("/", withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ["id", "post_content", "title", "created_at"],
-    include: [
-      {
-        model: Comment,
-      },
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
   })
     .then((postData) => {
       // serialize data before passing to template
       const posts = postData.map((post) => post.get({ plain: true }));
-      res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
+      // res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
+      res.render("partials/post-info", {
+        layout: "dashboard",
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       console.log(err);

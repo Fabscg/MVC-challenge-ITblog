@@ -1,5 +1,5 @@
 <article class="post">
-  <a href="/post/{{id}}">
+  <a class="text-decoration-none text-dark" href="/post/{{id}}">
     <div class="title">
       {{title}}
     </div>
@@ -10,11 +10,12 @@
       <br />
       by
       <p>{{user.username}}</p>
+
       on
-      {{format_date created_at}}
-      |
+      {{format_date createdAt}}
+
       <a href="/post/{{id}}">{{comments.length}}
-        {{format_plural "comment" comments.length}}</a>
+        {{comments.length}}</a>
     </div>
   </a>
 
