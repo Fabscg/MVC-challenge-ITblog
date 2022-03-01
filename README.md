@@ -54,7 +54,7 @@ Fabiola C. Gamboa
 
 ## [Heroku](https://afternoon-crag-71461.herokuapp.com/)
 
-## [Github](https://github.com/Fabskickass)
+## [Github](https://github.com/Fabscg)
 
 ## [Email](fabiscg79@gmail.com)
 
